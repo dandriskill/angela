@@ -17,7 +17,7 @@ const Gallery = (props) => (
   <div>
     <h1>Gallery</h1>
     {props.images.map((image) => (
-      <div key={image.url}>
+      <div key={image.url} className="gallery-image-container">
         <img src={image.url} alt={image.alt} />
         <p className="legend">{image.name}</p>
       </div>
