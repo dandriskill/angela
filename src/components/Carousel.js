@@ -1,5 +1,9 @@
 import React from 'react';
-import { array } from 'prop-types';
+import {
+  arrayOf,
+  shape,
+  string,
+} from 'prop-types';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -7,7 +11,11 @@ import { Carousel } from 'react-responsive-carousel';
 import '../assets/styles/Carousel.css';
 
 const propTypes = {
-  images: array.isRequired,
+  images: arrayOf(shape({
+    url: string.isRequired,
+    alt: string.isRequired,
+    name: string.isRequired,
+  })).isRequired,
 };
 
 const FeaturedCarousel = (props) => (
