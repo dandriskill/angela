@@ -6,6 +6,7 @@ import Carousel from './components/pages/Carousel';
 import Bio from './components/pages/Bio';
 import Gallery from './components/pages/Gallery';
 import Contact from './components/pages/Contact';
+import Login from './components/pages/Login';
 import Footer from './components/Footer';
 
 import './assets/styles/App.css';
@@ -66,6 +67,10 @@ class App extends Component {
                 <Route
                   path="/contact"
                   render={() => <Contact contactInfo={DummyContact} isAuthed={true} />}
+                />
+                <Route
+                  path="/login"
+                  component={Login}
                 />
               </Switch>
             </div>
