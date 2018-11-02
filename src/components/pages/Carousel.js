@@ -8,7 +8,7 @@ import {
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-import '../assets/styles/Carousel.css';
+import '../../assets/styles/Carousel.css';
 
 const propTypes = {
   images: arrayOf(shape({
