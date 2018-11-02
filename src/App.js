@@ -12,7 +12,8 @@ import './assets/styles/App.css';
 
 class App extends Component {
   render() {
-    const DummyImages = [
+
+    const DummyGallery = [
       {
         url: "https://via.placeholder.com/400x200",
         alt: "artwork-placeholder",
@@ -28,7 +29,20 @@ class App extends Component {
         alt: "artwork-placeholder",
         name: "Artpiece 3",
       },
+      {
+        url: "https://via.placeholder.com/400x200",
+        alt: "artwork-placeholder",
+        name: "Artpiece 4",
+      },
     ];
+
+    const DummyBio = "My name is Angela Walker, and I'm the most amazing artist in history! Take that, Picaso!";
+
+    const DummyContact = {
+      name: 'Angela Walker',
+      email: 'angela@angelawalker.com',
+    };
+
     return (
       <Router>
         <div className="App">
@@ -39,19 +53,19 @@ class App extends Component {
                 <Route
                   exact
                   path="/"
-                  render={() => <Carousel images={DummyImages} isAuthed={true} />}
+                  render={() => <Carousel images={DummyGallery} isAuthed={true} />}
                 />
                 <Route
                   path="/bio"
-                  component={Bio}
+                  render={() => <Bio bio={DummyBio} isAuthed={true} />}
                 />
                 <Route
                   path="/gallery"
-                  component={Gallery}
+                  render={() => <Gallery images={DummyGallery} isAuthed={true} />}
                 />
                 <Route
                   path="/contact"
-                  component={Contact}
+                  render={() => <Contact contactInfo={DummyContact} isAuthed={true} />}
                 />
               </Switch>
             </div>
