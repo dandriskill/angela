@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Nav from './components/Nav';
-import Carousel from './components/Carousel';
+import Content from './components/Content';
 import Footer from './components/Footer';
 
 import './assets/styles/App.css';
@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Nav />
-          <Carousel />
+          <Content />
         </header>
         <footer>
           <Footer />

@@ -1,10 +1,16 @@
 import React from 'react';
+import { array } from 'prop-types';
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 import '../assets/styles/Carousel.css';
 
-const ArtworkCarousel = () => (
+const propTypes = {
+  images: array.isRequired,
+};
+
+const FeaturedCarousel = (props) => (
   <div className="carousel-container">
     <Carousel
       showStatus={false}
@@ -17,20 +23,16 @@ const ArtworkCarousel = () => (
       emulateTouch={true}
       swipeable={true}
     >
-      <div>
-        <img src="https://via.placeholder.com/400x200" alt="artwork-placeholder" />
-        <p className="legend">Artpiece 1</p>
-      </div>
-      <div>
-        <img src="https://via.placeholder.com/400x200" alt="artwork-placeholder" />
-        <p className="legend">Artpiece 2</p>
-      </div>
-      <div>
-        <img src="https://via.placeholder.com/400x200" alt="artwork-placeholder" />
-        <p className="legend">Artpiece 3</p>
-      </div>
+      {props.images.map((image) => (
+        <div key={image.url}>
+          <img src={image.url} alt={image.alt} />
+          <p className="legend">{image.name}</p>
+        </div>
+      ))}
     </Carousel>
   </div>
 );
 
-export default ArtworkCarousel;
+FeaturedCarousel.propTypes = propTypes;
+
+export default FeaturedCarousel;
