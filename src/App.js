@@ -34,25 +34,27 @@ class App extends Component {
         <div className="App">
           <div className="App-content">
             <Nav />
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => <Carousel images={DummyImages} isAuthed={true} />}
-              />
-              <Route
-                path="/bio"
-                component={Bio}
-              />
-              <Route
-                path="/gallery"
-                component={Gallery}
-              />
-              <Route
-                path="/contact"
-                component={Contact}
-              />
-            </Switch>
+            <div className="content-container">
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => <Carousel images={DummyImages} isAuthed={true} />}
+                />
+                <Route
+                  path="/bio"
+                  component={Bio}
+                />
+                <Route
+                  path="/gallery"
+                  component={Gallery}
+                />
+                <Route
+                  path="/contact"
+                  component={Contact}
+                />
+              </Switch>
+            </div>
           </div>
           <footer>
             <Footer />
