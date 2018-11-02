@@ -5,13 +5,18 @@
 
 .App-content {
   min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
+  display: block;
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 50px;
+}
+@media (min-width: 768px) {
+  .App-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }
 
 .App-link {
