@@ -1,16 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../assets/styles/Nav.css';
 
 const Nav = () => (
   <div className="nav">
-    <div className="logo">
+    <Link to="/" className="logo">
       Angela Walker
-    </div>
+    </Link>
     <nav className="nav">
-      <div className="nav-link">Bio</div>
-      <div className="nav-link">Gallery</div>
-      <div className="nav-link">Contact</div>
+      <Link to="/bio" className="nav-link">
+        Bio
+      </Link>
+      <Link to="/gallery" className="nav-link">
+        Gallery
+      </Link>
+      <Link to="/contact" className="nav-link">
+        Contact
+      </Link>
     </nav>
   </div>
 );
