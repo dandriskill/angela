@@ -1,0 +1,9 @@
+.admin-panel-form {
+  display: block;
+}
+.admin-panel-flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+.admin-panel-flex-item {
+}
