@@ -6,7 +6,7 @@ import '../assets/styles/Nav.css';
 const Nav = () => (
   <div className="nav">
     <Link to="/" className="logo">
-      Angela Walker
+      Angela Heirtzler
     </Link>
     <nav className="nav">
       <Link to="/bio" className="nav-link">
