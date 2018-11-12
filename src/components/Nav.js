@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../assets/styles/Nav.css';
 
-const Nav = () => (
+const Nav = (props) => (
   <div className="nav">
     <Link to="/" className="logo">
       Angela Heirtzler
@@ -18,6 +18,15 @@ const Nav = () => (
       <Link to="/contact" className="nav-link">
         Contact
       </Link>
+      {props.authed &&
+        <button
+          onClick={() => {
+            props.logout()
+          }}
+        >
+            Logout
+        </button>
+      }
     </nav>
   </div>
 );

@@ -12,3 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.alert-link {
+  color: blue;
+  font-size: 12px;
+  display: block;
+  cursor: pointer;
+}
