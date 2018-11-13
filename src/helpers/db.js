@@ -5,7 +5,7 @@ export const write = ({
   name,
   email,
 }) => {
-  database.ref('/').set({
+  database.ref("/").set({
     bio,
     name,
     email,

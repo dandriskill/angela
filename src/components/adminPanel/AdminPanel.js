@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { string } from 'prop-types';
 
 import Bio from './Bio';
 import Contact from './Contact';
@@ -7,11 +8,17 @@ import { write } from '../../helpers/db';
 
 import '../../assets/styles/AdminPanel.css';
 
+const PropTypes = {
+  name: string.isRequired,
+  email: string.isRequired,
+  bio: string.isRequired,
+};
+
 class AdminPanel extends Component {
   state = {
-    bio: '',
     name: '',
     email: '',
+    bio: '',
     submitted: false,
   };
 
@@ -90,5 +97,7 @@ class AdminPanel extends Component {
     );
   }
 }
+
+AdminPanel.propTypes = PropTypes;
 
 export default AdminPanel;

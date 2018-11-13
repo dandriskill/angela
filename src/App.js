@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 
 import { logout } from './helpers/auth';
 import { firebaseAuth } from './config/constants';
+import { database } from './config/constants';
 
 import './assets/styles/App.css';
 
@@ -44,9 +45,25 @@ class App extends Component {
   state = {
     authed: false,
     loading: true,
+    name: '',
+    email: '',
+    bio: '',
   }
 
-  componentDidMount () {
+  componentDidMount() {
+    database.ref("/").on('value', snapshot => {
+      const {
+        name,
+        email,
+        bio,
+      } = snapshot.val();
+      this.setState({
+        name,
+        email,
+        bio
+      });
+    });
+
     this.removeListener = firebaseAuth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({
@@ -59,7 +76,7 @@ class App extends Component {
           loading: false
         })
       }
-    })
+    });
   }
 
   componentWillUnmount () {
@@ -91,18 +108,21 @@ class App extends Component {
       },
     ];
 
-    const DummyBio = "My name is Angela Heirtzler, and I'm the most amazing artist in history! Take that, Picaso!";
-
-    const DummyContact = {
-      name: 'Angela Heirtzler',
-      email: 'angela@angelaheirtzler.com',
-    };
+    const {
+      name,
+      email,
+      bio,
+    } = this.state;
 
     return this.state.loading === true ? <h1>Loading</h1> : (
       <Router>
         <div className="App">
           <div className="App-content">
-            <Nav authed={this.state.authed} logout={logout} />
+            <Nav
+              authed={this.state.authed}
+              logout={logout}
+              name={name}
+            />
             <div className="content-container">
               <Switch>
                 <Route
@@ -112,7 +132,7 @@ class App extends Component {
                 />
                 <Route
                   path="/bio"
-                  render={() => <Bio bio={DummyBio} />}
+                  render={() => <Bio bio={bio} />}
                 />
                 <Route
                   path="/gallery"
@@ -120,7 +140,7 @@ class App extends Component {
                 />
                 <Route
                   path="/contact"
-                  render={() => <Contact contactInfo={DummyContact} />}
+                  render={() => <Contact name={name} email={email} />}
                 />
                 <Route
                   path="/register"
@@ -140,7 +160,7 @@ class App extends Component {
             </div>
           </div>
           <footer>
-            <Footer />
+            <Footer name={name} />
           </footer>
         </div>
       </Router>

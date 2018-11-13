@@ -6,7 +6,7 @@ import '../assets/styles/Nav.css';
 const Nav = (props) => (
   <div className="nav">
     <Link to="/" className="logo">
-      Angela Heirtzler
+      {props.name}
     </Link>
     <nav className="nav">
       <Link to="/bio" className="nav-link">
@@ -20,11 +20,9 @@ const Nav = (props) => (
       </Link>
       {props.authed &&
         <button
-          onClick={() => {
-            props.logout()
-          }}
+          onClick={() => {props.logout()}}
         >
-            Logout
+          Logout
         </button>
       }
     </nav>

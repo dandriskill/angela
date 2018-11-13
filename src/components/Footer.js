@@ -2,9 +2,9 @@ import React from 'react';
 
 import '../assets/styles/Footer.css';
 
-const Footer = () => (
+const Footer = (props) => (
   <div className="footer-container">
-    <p>&copy; 2018 Angela Heirtzler.</p>
+    <p>&copy; {(new Date()).getFullYear()} {props.name}.</p>
     <p>All rights reserved.</p>
   </div>
 );
