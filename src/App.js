@@ -18,12 +18,12 @@ import { database } from './config/constants';
 import './assets/styles/App.css';
 
 // Private route wrapper
-const PrivateRoute = ({component: Component, authed, name, email, bio, ...rest}) => {
+const PrivateRoute = ({component: Component, authed, deezProps, ...rest}) => {
   return (
     <Route
       {...rest}
       render={(props) => authed === true
-        ? <Component {...props} name={name} email={email} bio={bio} />
+        ? <Component {...props} {...deezProps} />
         : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
     />
   );
@@ -155,9 +155,11 @@ class App extends Component {
                   path="/admin"
                   component={AdminPanel}
                   authed={this.state.authed}
-                  name={name}
-                  email={email}
-                  bio={bio}
+                  deezProps={{
+                    name,
+                    email,
+                    bio,
+                  }}
                 />
               </Switch>
             </div>
