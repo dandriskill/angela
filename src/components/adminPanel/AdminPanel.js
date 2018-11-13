@@ -22,6 +22,16 @@ class AdminPanel extends Component {
     submitted: false,
   };
 
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      this.setState({
+        name: this.props.name,
+        email: this.props.email,
+        bio: this.props.bio,
+      });
+    }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const {
