@@ -1,4 +1,4 @@
-# Angela Heirtzler - Artist
+# Angela Heirtzler - Artist Website
 
 ## Available Scripts
 

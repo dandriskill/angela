@@ -7,7 +7,8 @@ const Bio = (props) => (
     </h4>
     <input
       type="text"
-      value={props.bio}
+      name="bio"
+      defaultValue={props.bio}
       onChange={props.handleNewBio}
     />
   </div>
