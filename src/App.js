@@ -26,7 +26,7 @@ const PrivateRoute = ({component: Component, authed, ...rest}) => {
         ? <Component {...props} />
         : <Redirect to={{pathname: '/login', state: {from: props.location}}} />}
     />
-  )
+  );
 }
 
 // Public route wrapper
@@ -38,7 +38,7 @@ const PublicRoute = ({component: Component, authed, ...rest}) => {
         ? <Component {...props} />
         : <Redirect to='/admin' />}
     />
-  )
+  );
 }
 
 class App extends Component {
@@ -69,18 +69,18 @@ class App extends Component {
         this.setState({
           authed: true,
           loading: false,
-        })
+        });
       } else {
         this.setState({
           authed: false,
           loading: false
-        })
+        });
       }
     });
   }
 
   componentWillUnmount () {
-    this.removeListener()
+    this.removeListener();
   }
 
   render() {
