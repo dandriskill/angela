@@ -84,7 +84,6 @@ class App extends Component {
   }
 
   render() {
-
     const DummyGallery = [
       {
         url: "https://via.placeholder.com/400x200",
