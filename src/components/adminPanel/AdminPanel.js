@@ -15,12 +15,15 @@ const PropTypes = {
 };
 
 class AdminPanel extends Component {
-  state = {
-    name: '',
-    email: '',
-    bio: '',
-    submitted: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: this.props.name,
+      email: this.props.email,
+      bio: this.props.bio,
+      submitted: false,
+    };
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();

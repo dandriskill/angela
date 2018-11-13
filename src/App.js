@@ -155,6 +155,9 @@ class App extends Component {
                   path="/admin"
                   component={AdminPanel}
                   authed={this.state.authed}
+                  name={name}
+                  email={email}
+                  bio={bio}
                 />
               </Switch>
             </div>
