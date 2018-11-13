@@ -16,9 +16,9 @@ const PropTypes = {
 
 class AdminPanel extends Component {
   state = {
-    name: this.props.name,
-    email: this.props.email,
-    bio: this.props.bio,
+    name: '',
+    email: '',
+    bio: '',
     submitted: false,
   };
 
