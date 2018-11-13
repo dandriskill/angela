@@ -1,5 +1,14 @@
 # Angela Heirtzler - Artist Website
 
+## To Do
+* Gallery with modals
+* Styling finishing touches
+* Hide DB info when real database is implemented
+* Deploy
+
+* Allow image upload to gallery
+* Allow image upload and sort to carousel
+
 ## Available Scripts
 
 In the project directory, you can run:
